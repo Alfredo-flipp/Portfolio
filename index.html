@@ -3,31 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#121617">
-    <title>Фотограф Трубицын Тимофей - Портфолио</title>
-
+    <title>Фотограф - Портфолио</title>
+    
     <!-- OpenGraph Tags -->
     <meta property="og:title" content="Фотограф Трубицын Тимофей - Портфолио" />
     <meta property="og:description" content="Профессиональный фотограф в Липецке. Портретная, творческая и репортажная фотосъемка. Создаю уникальные истории через фотографию." />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://timshot.ru/" />
-    <meta property="og:image" content="https://timshot.ru/images/preview.jpg" />
+    <meta property="og:url" content="https://trubitsyn-photo.ru/" />
+    <meta property="og:image" content="https://trubitsyn-photo.ru/images/background1.jpg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:locale" content="ru_RU" />
     <meta property="og:site_name" content="Трубицын Тимофей - Фотограф" />
-
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://timshot.ru/" />
-    <meta property="twitter:title" content="Фотограф - Портфолио" />
-    <meta property="twitter:description" content="Профессиональный фотограф в Липецке. Портретная, творческая и репортажная фотосъемка. Создаю уникальные истории через фотографию." />
-    <meta property="twitter:image" content="https://timshot.ru/images/preview.jpg" />
-
-    <link rel="icon" href="/images/favicon.ico">
-    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
-    <link rel="manifest" href="/manifest.json">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -58,6 +45,8 @@
             -webkit-backdrop-filter: blur(15px);
             backdrop-filter: blur(15px);
             z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 0 0 12px 12px;
         }
 
         .site-name {
@@ -172,6 +161,8 @@
             transition: transform 0.3s ease-out, filter 0.3s ease-out;
             transform: translateY(0);
             will-change: transform, filter;
+            border-radius: 8px;
+            margin: 0 5px;
         }
 
         .background-slide:nth-child(1) {
@@ -292,6 +283,8 @@
             font-size: 0.9rem;
             font-weight: 300;
             font-family: 'Montserrat', sans-serif;
+            border-radius: 8px;
+            transition: all 0.3s ease;
         }
 
         .gallery {
@@ -305,7 +298,7 @@
             margin-bottom: 1rem;
             position: relative;
             overflow: hidden;
-            border-radius: 4px;
+            border-radius: 8px;
             background: #000;
         }
 
@@ -373,7 +366,7 @@
             padding: 3rem;
             background: rgba(255, 255, 255, 0.02);
             border: 1px solid rgba(255, 255, 255, 0.05);
-            border-radius: 10px;
+            border-radius: 12px;
             -webkit-backdrop-filter: blur(10px);
             backdrop-filter: blur(10px);
         }
@@ -482,7 +475,7 @@
             letter-spacing: 2px;
             padding: 10px 30px;
             border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 2px;
+            border-radius: 6px;
             background: transparent;
             transition: all 0.3s ease;
         }
@@ -537,6 +530,7 @@
             margin: auto;
             display: block;
             object-fit: contain;
+            border-radius: 8px;
         }
 
         .modal-caption {
@@ -549,12 +543,19 @@
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            background: transparent;
-            border: none;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
             color: white;
             font-size: 2rem;
             cursor: pointer;
             padding: 1rem;
+            border-radius: 8px;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(5px);
         }
 
         .prev { left: 1rem; }
@@ -576,6 +577,7 @@
             transition: all 0.3s ease;
             font-family: 'Montserrat', sans-serif;
             letter-spacing: 1px;
+            border-radius: 6px;
         }
 
         .filter-btn.active,
@@ -923,6 +925,48 @@
         </div>
         <div class="gallery-item" data-category="portrait" onclick="openModal(this)">
             <img src="images/portrait6.jpg" alt="Портретная фотография">
+            <div class="gallery-overlay">
+                <div class="gallery-title">Портрет</div>
+            </div>
+        </div>
+        <div class="gallery-item" data-category="portrait" onclick="openModal(this)">
+            <img src="images/portrait7.jpg" alt="Портретная фотография">
+            <div class="gallery-overlay">
+                <div class="gallery-title">Портрет</div>
+            </div>
+        </div>
+        <div class="gallery-item" data-category="portrait" onclick="openModal(this)">
+            <img src="images/portrait8.jpg" alt="Портретная фотография">
+            <div class="gallery-overlay">
+                <div class="gallery-title">Портрет</div>
+            </div>
+        </div>
+        <div class="gallery-item" data-category="portrait" onclick="openModal(this)">
+            <img src="images/portrait9.jpg" alt="Портретная фотография">
+            <div class="gallery-overlay">
+                <div class="gallery-title">Портрет</div>
+            </div>
+        </div>
+        <div class="gallery-item" data-category="portrait" onclick="openModal(this)">
+            <img src="images/portrait10.jpg" alt="Портретная фотография">
+            <div class="gallery-overlay">
+                <div class="gallery-title">Портрет</div>
+            </div>
+        </div>
+        <div class="gallery-item" data-category="portrait" onclick="openModal(this)">
+            <img src="images/portrait11.jpg" alt="Портретная фотография">
+            <div class="gallery-overlay">
+                <div class="gallery-title">Портрет</div>
+            </div>
+        </div>
+        <div class="gallery-item" data-category="portrait" onclick="openModal(this)">
+            <img src="images/portrait12.jpg" alt="Портретная фотография">
+            <div class="gallery-overlay">
+                <div class="gallery-title">Портрет</div>
+            </div>
+        </div>
+        <div class="gallery-item" data-category="portrait" onclick="openModal(this)">
+            <img src="images/portrait13.jpg" alt="Портретная фотография">
             <div class="gallery-overlay">
                 <div class="gallery-title">Портрет</div>
             </div>
