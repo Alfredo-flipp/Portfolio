@@ -319,14 +319,15 @@
         }
 
         .gallery {
-            columns: 3;
-            column-gap: 1rem;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
             padding: 6rem 2rem;
         }
 
         .gallery-item {
             break-inside: avoid;
-            margin-bottom: 1rem;
+            margin-bottom: 0;
             position: relative;
             overflow: hidden;
             border-radius: 8px;
@@ -335,11 +336,11 @@
 
         .gallery-item img {
             width: 100%;
-            height: auto;
+            height: 100%;
             display: block;
             transition: transform 0.5s ease;
             object-fit: cover;
-            min-height: 300px;
+            aspect-ratio: 1 / 1.2;
             opacity: 0.95;
             -webkit-backface-visibility: hidden;
             backface-visibility: hidden;
@@ -355,7 +356,7 @@
             left: 0;
             right: 0;
             padding: 3rem 2rem;
-            background: linear-gradient(transparent, rgba(0,0,0,0.9));
+            background: linear-gradient(transparent, rgba(0,0,0,0.5));
             opacity: 0;
             transition: opacity 0.3s ease;
         }
@@ -377,15 +378,6 @@
 
         .gallery-item:hover .gallery-overlay {
             opacity: 1;
-        }
-
-        .gallery-title {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 300;
-            letter-spacing: 1.5px;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            color: #ffffff;
         }
 
         .profile-section {
@@ -539,7 +531,7 @@
 
         @media (max-width: 1200px) {
             .gallery {
-                columns: 2;
+                grid-template-columns: repeat(2, 1fr);
             }
             .gallery-item img {
                 min-height: 250px;
@@ -548,7 +540,7 @@
 
         @media (max-width: 768px) {
             .gallery {
-                columns: 1;
+                grid-template-columns: 1fr;
             }
             .gallery-item img {
                 min-height: 200px;
@@ -863,357 +855,241 @@
         <!-- Новые фото сверху (photo) -->
         <div class="gallery-item" onclick="openModal(this)">
             <img src="images/photo19.jpg" alt="Фотография">
-            <div class="gallery-overlay">
-                <div class="gallery-title">Фотография</div>
-            </div>
+            <div class="gallery-overlay"></div>
         </div>
         <div class="gallery-item" onclick="openModal(this)">
             <img src="images/photo18.jpg" alt="Фотография">
-            <div class="gallery-overlay">
-                <div class="gallery-title">Фотография</div>
-            </div>
+            <div class="gallery-overlay"></div>
         </div>
         <div class="gallery-item" onclick="openModal(this)">
             <img src="images/photo17.jpg" alt="Фотография">
-            <div class="gallery-overlay">
-                <div class="gallery-title">Фотография</div>
-            </div>
+            <div class="gallery-overlay"></div>
         </div>
         <div class="gallery-item" onclick="openModal(this)">
             <img src="images/photo16.jpg" alt="Фотография">
-            <div class="gallery-overlay">
-                <div class="gallery-title">Фотография</div>
-            </div>
+            <div class="gallery-overlay"></div>
         </div>
         <div class="gallery-item" onclick="openModal(this)">
             <img src="images/photo15.jpg" alt="Фотография">
-            <div class="gallery-overlay">
-                <div class="gallery-title">Фотография</div>
-            </div>
+            <div class="gallery-overlay"></div>
         </div>
         <div class="gallery-item" onclick="openModal(this)">
             <img src="images/photo14.jpg" alt="Фотография">
-            <div class="gallery-overlay">
-                <div class="gallery-title">Фотография</div>
-            </div>
+            <div class="gallery-overlay"></div>
         </div>
         <div class="gallery-item" onclick="openModal(this)">
             <img src="images/photo13.jpg" alt="Фотография">
-            <div class="gallery-overlay">
-                <div class="gallery-title">Фотография</div>
-            </div>
+            <div class="gallery-overlay"></div>
         </div>
         <div class="gallery-item" onclick="openModal(this)">
             <img src="images/photo12.jpg" alt="Фотография">
-            <div class="gallery-overlay">
-                <div class="gallery-title">Фотография</div>
-            </div>
+            <div class="gallery-overlay"></div>
         </div>
         <div class="gallery-item" onclick="openModal(this)">
             <img src="images/photo11.jpg" alt="Фотография">
-            <div class="gallery-overlay">
-                <div class="gallery-title">Фотография</div>
-            </div>
+            <div class="gallery-overlay"></div>
         </div>
         <div class="gallery-item" onclick="openModal(this)">
             <img src="images/photo10.jpg" alt="Фотография">
-            <div class="gallery-overlay">
-                <div class="gallery-title">Фотография</div>
-            </div>
+            <div class="gallery-overlay"></div>
         </div>
         <div class="gallery-item" onclick="openModal(this)">
             <img src="images/photo9.jpg" alt="Фотография">
-            <div class="gallery-overlay">
-                <div class="gallery-title">Фотография</div>
-            </div>
+            <div class="gallery-overlay"></div>
         </div>
         <div class="gallery-item" onclick="openModal(this)">
             <img src="images/photo8.jpg" alt="Фотография">
-            <div class="gallery-overlay">
-                <div class="gallery-title">Фотография</div>
-            </div>
+            <div class="gallery-overlay"></div>
         </div>
         <div class="gallery-item" onclick="openModal(this)">
             <img src="images/photo7.jpg" alt="Фотография">
-            <div class="gallery-overlay">
-                <div class="gallery-title">Фотография</div>
-            </div>
+            <div class="gallery-overlay"></div>
         </div>
         <div class="gallery-item" onclick="openModal(this)">
             <img src="images/photo6.jpg" alt="Фотография">
-            <div class="gallery-overlay">
-                <div class="gallery-title">Фотография</div>
-            </div>
+            <div class="gallery-overlay"></div>
         </div>
         <div class="gallery-item" onclick="openModal(this)">
             <img src="images/photo5.jpg" alt="Фотография">
-            <div class="gallery-overlay">
-                <div class="gallery-title">Фотография</div>
-            </div>
+            <div class="gallery-overlay"></div>
         </div>
         <div class="gallery-item" onclick="openModal(this)">
             <img src="images/photo4.jpg" alt="Фотография">
-            <div class="gallery-overlay">
-                <div class="gallery-title">Фотография</div>
-            </div>
+            <div class="gallery-overlay"></div>
         </div>
         <div class="gallery-item" onclick="openModal(this)">
             <img src="images/photo3.jpg" alt="Фотография">
-            <div class="gallery-overlay">
-                <div class="gallery-title">Фотография</div>
-            </div>
+            <div class="gallery-overlay"></div>
         </div>
         <div class="gallery-item" onclick="openModal(this)">
             <img src="images/photo2.jpg" alt="Фотография">
-            <div class="gallery-overlay">
-                <div class="gallery-title">Фотография</div>
-            </div>
+            <div class="gallery-overlay"></div>
         </div>
         <div class="gallery-item" onclick="openModal(this)">
             <img src="images/photo1.jpg" alt="Фотография">
-            <div class="gallery-overlay">
-                <div class="gallery-title">Фотография</div>
-            </div>
+            <div class="gallery-overlay"></div>
         </div>
         
         <!-- Категория portrait -->
         <div class="gallery-item" onclick="openModal(this)">
             <img src="images/portrait19.jpg" alt="Фотография">
-            <div class="gallery-overlay">
-                <div class="gallery-title">Фотография</div>
-            </div>
+            <div class="gallery-overlay"></div>
         </div>
         <div class="gallery-item" onclick="openModal(this)">
             <img src="images/portrait18.jpg" alt="Фотография">
-            <div class="gallery-overlay">
-                <div class="gallery-title">Фотография</div>
-            </div>
+            <div class="gallery-overlay"></div>
         </div>
         <div class="gallery-item" onclick="openModal(this)">
             <img src="images/portrait17.jpg" alt="Фотография">
-            <div class="gallery-overlay">
-                <div class="gallery-title">Фотография</div>
-            </div>
+            <div class="gallery-overlay"></div>
         </div>
         <div class="gallery-item" onclick="openModal(this)">
             <img src="images/portrait16.jpg" alt="Фотография">
-            <div class="gallery-overlay">
-                <div class="gallery-title">Фотография</div>
-            </div>
+            <div class="gallery-overlay"></div>
         </div>
         <div class="gallery-item" onclick="openModal(this)">
             <img src="images/portrait15.jpg" alt="Фотография">
-            <div class="gallery-overlay">
-                <div class="gallery-title">Фотография</div>
-            </div>
+            <div class="gallery-overlay"></div>
         </div>
         <div class="gallery-item" onclick="openModal(this)">
             <img src="images/portrait14.jpg" alt="Фотография">
-            <div class="gallery-overlay">
-                <div class="gallery-title">Фотография</div>
-            </div>
+            <div class="gallery-overlay"></div>
         </div>
         <div class="gallery-item" onclick="openModal(this)">
             <img src="images/portrait13.jpg" alt="Фотография">
-            <div class="gallery-overlay">
-                <div class="gallery-title">Фотография</div>
-            </div>
+            <div class="gallery-overlay"></div>
         </div>
         <div class="gallery-item" onclick="openModal(this)">
             <img src="images/portrait12.jpg" alt="Фотография">
-            <div class="gallery-overlay">
-                <div class="gallery-title">Фотография</div>
-            </div>
+            <div class="gallery-overlay"></div>
         </div>
         <div class="gallery-item" onclick="openModal(this)">
             <img src="images/portrait11.jpg" alt="Фотография">
-            <div class="gallery-overlay">
-                <div class="gallery-title">Фотография</div>
-            </div>
+            <div class="gallery-overlay"></div>
         </div>
         <div class="gallery-item" onclick="openModal(this)">
             <img src="images/portrait10.jpg" alt="Фотография">
-            <div class="gallery-overlay">
-                <div class="gallery-title">Фотография</div>
-            </div>
+            <div class="gallery-overlay"></div>
         </div>
         <div class="gallery-item" onclick="openModal(this)">
             <img src="images/portrait9.jpg" alt="Фотография">
-            <div class="gallery-overlay">
-                <div class="gallery-title">Фотография</div>
-            </div>
+            <div class="gallery-overlay"></div>
         </div>
         <div class="gallery-item" onclick="openModal(this)">
             <img src="images/portrait8.jpg" alt="Фотография">
-            <div class="gallery-overlay">
-                <div class="gallery-title">Фотография</div>
-            </div>
+            <div class="gallery-overlay"></div>
         </div>
         <div class="gallery-item" onclick="openModal(this)">
             <img src="images/portrait7.jpg" alt="Фотография">
-            <div class="gallery-overlay">
-                <div class="gallery-title">Фотография</div>
-            </div>
+            <div class="gallery-overlay"></div>
         </div>
         <div class="gallery-item" onclick="openModal(this)">
             <img src="images/portrait6.jpg" alt="Фотография">
-            <div class="gallery-overlay">
-                <div class="gallery-title">Фотография</div>
-            </div>
+            <div class="gallery-overlay"></div>
         </div>
         <div class="gallery-item" onclick="openModal(this)">
             <img src="images/portrait5.jpg" alt="Фотография">
-            <div class="gallery-overlay">
-                <div class="gallery-title">Фотография</div>
-            </div>
+            <div class="gallery-overlay"></div>
         </div>
         <div class="gallery-item" onclick="openModal(this)">
             <img src="images/portrait4.jpg" alt="Фотография">
-            <div class="gallery-overlay">
-                <div class="gallery-title">Фотография</div>
-            </div>
+            <div class="gallery-overlay"></div>
         </div>
         <div class="gallery-item" onclick="openModal(this)">
             <img src="images/portrait3.jpg" alt="Фотография">
-            <div class="gallery-overlay">
-                <div class="gallery-title">Фотография</div>
-            </div>
+            <div class="gallery-overlay"></div>
         </div>
         <div class="gallery-item" onclick="openModal(this)">
             <img src="images/portrait2.jpg" alt="Фотография">
-            <div class="gallery-overlay">
-                <div class="gallery-title">Фотография</div>
-            </div>
+            <div class="gallery-overlay"></div>
         </div>
         <div class="gallery-item" onclick="openModal(this)">
             <img src="images/portrait1.jpg" alt="Фотография">
-            <div class="gallery-overlay">
-                <div class="gallery-title">Фотография</div>
-            </div>
+            <div class="gallery-overlay"></div>
         </div>
         
         <!-- Категория creative -->
         <div class="gallery-item" onclick="openModal(this)">
             <img src="images/creative9.jpg" alt="Фотография">
-            <div class="gallery-overlay">
-                <div class="gallery-title">Фотография</div>
-            </div>
+            <div class="gallery-overlay"></div>
         </div>
         <div class="gallery-item" onclick="openModal(this)">
             <img src="images/creative8.jpg" alt="Фотография">
-            <div class="gallery-overlay">
-                <div class="gallery-title">Фотография</div>
-            </div>
+            <div class="gallery-overlay"></div>
         </div>
         <div class="gallery-item" onclick="openModal(this)">
             <img src="images/creative7.jpg" alt="Фотография">
-            <div class="gallery-overlay">
-                <div class="gallery-title">Фотография</div>
-            </div>
+            <div class="gallery-overlay"></div>
         </div>
         <div class="gallery-item" onclick="openModal(this)">
             <img src="images/creative6.jpg" alt="Фотография">
-            <div class="gallery-overlay">
-                <div class="gallery-title">Фотография</div>
-            </div>
+            <div class="gallery-overlay"></div>
         </div>
         <div class="gallery-item" onclick="openModal(this)">
             <img src="images/creative5.jpg" alt="Фотография">
-            <div class="gallery-overlay">
-                <div class="gallery-title">Фотография</div>
-            </div>
+            <div class="gallery-overlay"></div>
         </div>
         <div class="gallery-item" onclick="openModal(this)">
             <img src="images/creative4.jpg" alt="Фотография">
-            <div class="gallery-overlay">
-                <div class="gallery-title">Фотография</div>
-            </div>
+            <div class="gallery-overlay"></div>
         </div>
         <div class="gallery-item" onclick="openModal(this)">
             <img src="images/creative3.jpg" alt="Фотография">
-            <div class="gallery-overlay">
-                <div class="gallery-title">Фотография</div>
-            </div>
+            <div class="gallery-overlay"></div>
         </div>
         <div class="gallery-item" onclick="openModal(this)">
             <img src="images/creative2.jpg" alt="Фотография">
-            <div class="gallery-overlay">
-                <div class="gallery-title">Фотография</div>
-            </div>
+            <div class="gallery-overlay"></div>
         </div>
         <div class="gallery-item" onclick="openModal(this)">
             <img src="images/creative1.jpg" alt="Фотография">
-            <div class="gallery-overlay">
-                <div class="gallery-title">Фотография</div>
-            </div>
+            <div class="gallery-overlay"></div>
         </div>
         
         <!-- Категория story (в самом низу) -->
         <div class="gallery-item" onclick="openModal(this)">
             <img src="images/story11.jpg" alt="Фотография">
-            <div class="gallery-overlay">
-                <div class="gallery-title">Фотография</div>
-            </div>
+            <div class="gallery-overlay"></div>
         </div>
         <div class="gallery-item" onclick="openModal(this)">
             <img src="images/story10.jpg" alt="Фотография">
-            <div class="gallery-overlay">
-                <div class="gallery-title">Фотография</div>
-            </div>
+            <div class="gallery-overlay"></div>
         </div>
         <div class="gallery-item" onclick="openModal(this)">
             <img src="images/story9.jpg" alt="Фотография">
-            <div class="gallery-overlay">
-                <div class="gallery-title">Фотография</div>
-            </div>
+            <div class="gallery-overlay"></div>
         </div>
         <div class="gallery-item" onclick="openModal(this)">
             <img src="images/story8.jpg" alt="Фотография">
-            <div class="gallery-overlay">
-                <div class="gallery-title">Фотография</div>
-            </div>
+            <div class="gallery-overlay"></div>
         </div>
         <div class="gallery-item" onclick="openModal(this)">
             <img src="images/story7.jpg" alt="Фотография">
-            <div class="gallery-overlay">
-                <div class="gallery-title">Фотография</div>
-            </div>
+            <div class="gallery-overlay"></div>
         </div>
         <div class="gallery-item" onclick="openModal(this)">
             <img src="images/story6.jpg" alt="Фотография">
-            <div class="gallery-overlay">
-                <div class="gallery-title">Фотография</div>
-            </div>
+            <div class="gallery-overlay"></div>
         </div>
         <div class="gallery-item" onclick="openModal(this)">
             <img src="images/story5.jpg" alt="Фотография">
-            <div class="gallery-overlay">
-                <div class="gallery-title">Фотография</div>
-            </div>
+            <div class="gallery-overlay"></div>
         </div>
         <div class="gallery-item" onclick="openModal(this)">
             <img src="images/story4.jpg" alt="Фотография">
-            <div class="gallery-overlay">
-                <div class="gallery-title">Фотография</div>
-            </div>
+            <div class="gallery-overlay"></div>
         </div>
         <div class="gallery-item" onclick="openModal(this)">
             <img src="images/story3.jpg" alt="Фотография">
-            <div class="gallery-overlay">
-                <div class="gallery-title">Фотография</div>
-            </div>
+            <div class="gallery-overlay"></div>
         </div>
         <div class="gallery-item" onclick="openModal(this)">
             <img src="images/story2.jpg" alt="Фотография">
-            <div class="gallery-overlay">
-                <div class="gallery-title">Фотография</div>
-            </div>
+            <div class="gallery-overlay"></div>
         </div>
         <div class="gallery-item" onclick="openModal(this)">
             <img src="images/story1.jpg" alt="Фотография">
-            <div class="gallery-overlay">
-                <div class="gallery-title">Фотография</div>
-            </div>
+            <div class="gallery-overlay"></div>
         </div>
     </div>
 
@@ -1283,7 +1159,7 @@
             tempImage.onload = function() {
                 modal.style.display = "flex";
                 modalImg.src = this.src;
-                caption.textContent = element.querySelector('.gallery-title').textContent;
+                caption.textContent = element.querySelector('img').alt;
                 
                 // Store current index for navigation
                 modal.dataset.currentIndex = currentIndex;
