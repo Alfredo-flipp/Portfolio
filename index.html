@@ -311,6 +311,13 @@
             transition: all 0.3s ease;
         }
 
+        .contact-btn:hover {
+            background: rgba(255,255,255,0.2);
+            border-color: rgba(255,255,255,1);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
         .gallery {
             columns: 3;
             column-gap: 1rem;
@@ -393,6 +400,14 @@
             border-radius: 12px;
             -webkit-backdrop-filter: blur(10px);
             backdrop-filter: blur(10px);
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .profile-section.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         .profile-photo {
@@ -444,6 +459,14 @@
             padding: 4rem 2rem;
             background: rgba(0, 0, 0, 0.4);
             border-top: 1px solid rgba(255, 255, 255, 0.1);
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .contact.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         .contact h2 {
@@ -585,31 +608,6 @@
         .prev { left: 1rem; }
         .next { right: 1rem; }
 
-        .gallery-filters {
-            text-align: center;
-            padding: 2rem 0;
-            margin-bottom: 2rem;
-        }
-
-        .filter-btn {
-            background: transparent;
-            border: 1px solid rgba(255,255,255,0.2);
-            color: white;
-            padding: 0.8rem 2rem;
-            margin: 0 0.5rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-family: 'Montserrat', sans-serif;
-            letter-spacing: 1px;
-            border-radius: 6px;
-        }
-
-        .filter-btn.active,
-        .filter-btn:hover {
-            background: rgba(255,255,255,0.1);
-            border-color: rgba(255,255,255,0.3);
-        }
-
         .gallery-item {
             transition: all 0.5s ease;
         }
@@ -639,39 +637,6 @@
         }
 
         .gallery-item.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .gallery-filters {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.8s ease;
-        }
-
-        .gallery-filters.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .profile-section {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s ease;
-        }
-
-        .profile-section.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .contact {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s ease;
-        }
-
-        .contact.visible {
             opacity: 1;
             transform: translateY(0);
         }
@@ -725,21 +690,6 @@
             .gallery {
                 padding: 4rem 1rem;
                 columns: 1;
-            }
-
-            .gallery-filters {
-                padding: 1rem;
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 0.5rem;
-            }
-
-            .filter-btn {
-                padding: 0.6rem 1rem;
-                font-size: 0.8rem;
-                width: calc(50% - 0.5rem);
-                margin: 0;
             }
 
             .profile-section {
@@ -908,263 +858,361 @@
         </div>
     </section>
 
-    <div class="gallery-filters">
-        <button class="filter-btn active" data-category="all">Все</button>
-        <button class="filter-btn" data-category="portrait">Портреты</button>
-        <button class="filter-btn" data-category="creative">Творческие</button>
-        <button class="filter-btn" data-category="story">Истории</button>
-    </div>
-
     <div class="gallery" id="gallery">
-        <!-- Портреты -->
-        <div class="gallery-item" data-category="portrait" onclick="openModal(this)">
-            <img src="images/portrait1.jpg" alt="Портретная фотография">
+        <!-- Галерея фотографий -->
+        <!-- Новые фото сверху (photo) -->
+        <div class="gallery-item" onclick="openModal(this)">
+            <img src="images/photo19.jpg" alt="Фотография">
             <div class="gallery-overlay">
-                <div class="gallery-title">Портрет</div>
+                <div class="gallery-title">Фотография</div>
             </div>
         </div>
-        <div class="gallery-item" data-category="portrait" onclick="openModal(this)">
-            <img src="images/portrait2.jpg" alt="Портретная фотография">
+        <div class="gallery-item" onclick="openModal(this)">
+            <img src="images/photo18.jpg" alt="Фотография">
             <div class="gallery-overlay">
-                <div class="gallery-title">Портрет</div>
+                <div class="gallery-title">Фотография</div>
             </div>
         </div>
-        <div class="gallery-item" data-category="portrait" onclick="openModal(this)">
-            <img src="images/portrait3.jpg" alt="Портретная фотография">
+        <div class="gallery-item" onclick="openModal(this)">
+            <img src="images/photo17.jpg" alt="Фотография">
             <div class="gallery-overlay">
-                <div class="gallery-title">Портрет</div>
+                <div class="gallery-title">Фотография</div>
             </div>
         </div>
-        <div class="gallery-item" data-category="portrait" onclick="openModal(this)">
-            <img src="images/portrait4.jpg" alt="Портретная фотография">
+        <div class="gallery-item" onclick="openModal(this)">
+            <img src="images/photo16.jpg" alt="Фотография">
             <div class="gallery-overlay">
-                <div class="gallery-title">Портрет</div>
+                <div class="gallery-title">Фотография</div>
             </div>
         </div>
-        <div class="gallery-item" data-category="portrait" onclick="openModal(this)">
-            <img src="images/portrait5.jpg" alt="Портретная фотография">
+        <div class="gallery-item" onclick="openModal(this)">
+            <img src="images/photo15.jpg" alt="Фотография">
             <div class="gallery-overlay">
-                <div class="gallery-title">Портрет</div>
+                <div class="gallery-title">Фотография</div>
             </div>
         </div>
-        <div class="gallery-item" data-category="portrait" onclick="openModal(this)">
-            <img src="images/portrait6.jpg" alt="Портретная фотография">
+        <div class="gallery-item" onclick="openModal(this)">
+            <img src="images/photo14.jpg" alt="Фотография">
             <div class="gallery-overlay">
-                <div class="gallery-title">Портрет</div>
+                <div class="gallery-title">Фотография</div>
             </div>
         </div>
-        <div class="gallery-item" data-category="portrait" onclick="openModal(this)">
-            <img src="images/portrait7.jpg" alt="Портретная фотография">
+        <div class="gallery-item" onclick="openModal(this)">
+            <img src="images/photo13.jpg" alt="Фотография">
             <div class="gallery-overlay">
-                <div class="gallery-title">Портрет</div>
+                <div class="gallery-title">Фотография</div>
             </div>
         </div>
-        <div class="gallery-item" data-category="portrait" onclick="openModal(this)">
-            <img src="images/portrait8.jpg" alt="Портретная фотография">
+        <div class="gallery-item" onclick="openModal(this)">
+            <img src="images/photo12.jpg" alt="Фотография">
             <div class="gallery-overlay">
-                <div class="gallery-title">Портрет</div>
+                <div class="gallery-title">Фотография</div>
             </div>
         </div>
-        <div class="gallery-item" data-category="portrait" onclick="openModal(this)">
-            <img src="images/portrait9.jpg" alt="Портретная фотография">
+        <div class="gallery-item" onclick="openModal(this)">
+            <img src="images/photo11.jpg" alt="Фотография">
             <div class="gallery-overlay">
-                <div class="gallery-title">Портрет</div>
+                <div class="gallery-title">Фотография</div>
             </div>
         </div>
-        <div class="gallery-item" data-category="portrait" onclick="openModal(this)">
-            <img src="images/portrait10.jpg" alt="Портретная фотография">
+        <div class="gallery-item" onclick="openModal(this)">
+            <img src="images/photo10.jpg" alt="Фотография">
             <div class="gallery-overlay">
-                <div class="gallery-title">Портрет</div>
+                <div class="gallery-title">Фотография</div>
             </div>
         </div>
-        <div class="gallery-item" data-category="portrait" onclick="openModal(this)">
-            <img src="images/portrait11.jpg" alt="Портретная фотография">
+        <div class="gallery-item" onclick="openModal(this)">
+            <img src="images/photo9.jpg" alt="Фотография">
             <div class="gallery-overlay">
-                <div class="gallery-title">Портрет</div>
+                <div class="gallery-title">Фотография</div>
             </div>
         </div>
-        <div class="gallery-item" data-category="portrait" onclick="openModal(this)">
-            <img src="images/portrait12.jpg" alt="Портретная фотография">
+        <div class="gallery-item" onclick="openModal(this)">
+            <img src="images/photo8.jpg" alt="Фотография">
             <div class="gallery-overlay">
-                <div class="gallery-title">Портрет</div>
+                <div class="gallery-title">Фотография</div>
             </div>
         </div>
-        <div class="gallery-item" data-category="portrait" onclick="openModal(this)">
-            <img src="images/portrait13.jpg" alt="Портретная фотография">
+        <div class="gallery-item" onclick="openModal(this)">
+            <img src="images/photo7.jpg" alt="Фотография">
             <div class="gallery-overlay">
-                <div class="gallery-title">Портрет</div>
+                <div class="gallery-title">Фотография</div>
             </div>
         </div>
-        <!-- Новый портрет -->
-        <div class="gallery-item" data-category="portrait" onclick="openModal(this)">
-            <img src="images/portrait14.jpg" alt="Портретная фотография">
+        <div class="gallery-item" onclick="openModal(this)">
+            <img src="images/photo6.jpg" alt="Фотография">
             <div class="gallery-overlay">
-                <div class="gallery-title">Портрет</div>
+                <div class="gallery-title">Фотография</div>
             </div>
         </div>
-        <!-- Новые портреты -->
-        <div class="gallery-item" data-category="portrait" onclick="openModal(this)">
-            <img src="images/portrait15.jpg" alt="Портретная фотография">
+        <div class="gallery-item" onclick="openModal(this)">
+            <img src="images/photo5.jpg" alt="Фотография">
             <div class="gallery-overlay">
-                <div class="gallery-title">Портрет</div>
+                <div class="gallery-title">Фотография</div>
             </div>
         </div>
-        <div class="gallery-item" data-category="portrait" onclick="openModal(this)">
-            <img src="images/portrait16.jpg" alt="Портретная фотография">
+        <div class="gallery-item" onclick="openModal(this)">
+            <img src="images/photo4.jpg" alt="Фотография">
             <div class="gallery-overlay">
-                <div class="gallery-title">Портрет</div>
+                <div class="gallery-title">Фотография</div>
             </div>
         </div>
-        <div class="gallery-item" data-category="portrait" onclick="openModal(this)">
-            <img src="images/portrait17.jpg" alt="Портретная фотография">
+        <div class="gallery-item" onclick="openModal(this)">
+            <img src="images/photo3.jpg" alt="Фотография">
             <div class="gallery-overlay">
-                <div class="gallery-title">Портрет</div>
+                <div class="gallery-title">Фотография</div>
             </div>
         </div>
-        <div class="gallery-item" data-category="portrait" onclick="openModal(this)">
-            <img src="images/portrait18.jpg" alt="Портретная фотография">
+        <div class="gallery-item" onclick="openModal(this)">
+            <img src="images/photo2.jpg" alt="Фотография">
             <div class="gallery-overlay">
-                <div class="gallery-title">Портрет</div>
+                <div class="gallery-title">Фотография</div>
             </div>
         </div>
-        <div class="gallery-item" data-category="portrait" onclick="openModal(this)">
-            <img src="images/portrait19.jpg" alt="Портретная фотография">
+        <div class="gallery-item" onclick="openModal(this)">
+            <img src="images/photo1.jpg" alt="Фотография">
             <div class="gallery-overlay">
-                <div class="gallery-title">Портрет</div>
+                <div class="gallery-title">Фотография</div>
             </div>
         </div>
-
-        <!-- Творческие -->
-        <div class="gallery-item" data-category="creative" onclick="openModal(this)">
-            <img src="images/story3.jpg" alt="Творческая фотография">
+        
+        <!-- Категория portrait -->
+        <div class="gallery-item" onclick="openModal(this)">
+            <img src="images/portrait19.jpg" alt="Фотография">
             <div class="gallery-overlay">
-                <div class="gallery-title">Творческие</div>
+                <div class="gallery-title">Фотография</div>
             </div>
         </div>
-        <div class="gallery-item" data-category="creative" onclick="openModal(this)">
-            <img src="images/story6.jpg" alt="Творческая фотография">
+        <div class="gallery-item" onclick="openModal(this)">
+            <img src="images/portrait18.jpg" alt="Фотография">
             <div class="gallery-overlay">
-                <div class="gallery-title">Творческие</div>
+                <div class="gallery-title">Фотография</div>
             </div>
         </div>
-        <!-- Новые творческие работы -->
-        <div class="gallery-item" data-category="creative" onclick="openModal(this)">
-            <img src="images/story7.jpg" alt="Творческая фотография">
+        <div class="gallery-item" onclick="openModal(this)">
+            <img src="images/portrait17.jpg" alt="Фотография">
             <div class="gallery-overlay">
-                <div class="gallery-title">Творческие</div>
+                <div class="gallery-title">Фотография</div>
             </div>
         </div>
-        <div class="gallery-item" data-category="creative" onclick="openModal(this)">
-            <img src="images/story8.jpg" alt="Творческая фотография">
+        <div class="gallery-item" onclick="openModal(this)">
+            <img src="images/portrait16.jpg" alt="Фотография">
             <div class="gallery-overlay">
-                <div class="gallery-title">Творческие</div>
+                <div class="gallery-title">Фотография</div>
             </div>
         </div>
-        <div class="gallery-item" data-category="creative" onclick="openModal(this)">
-            <img src="images/story9.jpg" alt="Творческая фотография">
+        <div class="gallery-item" onclick="openModal(this)">
+            <img src="images/portrait15.jpg" alt="Фотография">
             <div class="gallery-overlay">
-                <div class="gallery-title">Творческие</div>
+                <div class="gallery-title">Фотография</div>
             </div>
         </div>
-        <div class="gallery-item" data-category="creative" onclick="openModal(this)">
-            <img src="images/story1.jpg" alt="Творческая фотография">
+        <div class="gallery-item" onclick="openModal(this)">
+            <img src="images/portrait14.jpg" alt="Фотография">
             <div class="gallery-overlay">
-                <div class="gallery-title">Творческие</div>
+                <div class="gallery-title">Фотография</div>
             </div>
         </div>
-        <div class="gallery-item" data-category="creative" onclick="openModal(this)">
-            <img src="images/story4.jpg" alt="Творческая фотография">
+        <div class="gallery-item" onclick="openModal(this)">
+            <img src="images/portrait13.jpg" alt="Фотография">
             <div class="gallery-overlay">
-                <div class="gallery-title">Творческие</div>
+                <div class="gallery-title">Фотография</div>
             </div>
         </div>
-        <div class="gallery-item" data-category="creative" onclick="openModal(this)">
-            <img src="images/story2.jpg" alt="Творческая фотография">
+        <div class="gallery-item" onclick="openModal(this)">
+            <img src="images/portrait12.jpg" alt="Фотография">
             <div class="gallery-overlay">
-                <div class="gallery-title">Творческие</div>
+                <div class="gallery-title">Фотография</div>
             </div>
         </div>
-        <div class="gallery-item" data-category="creative" onclick="openModal(this)">
-            <img src="images/story5.jpg" alt="Творческая фотография">
+        <div class="gallery-item" onclick="openModal(this)">
+            <img src="images/portrait11.jpg" alt="Фотография">
             <div class="gallery-overlay">
-                <div class="gallery-title">Творческие</div>
+                <div class="gallery-title">Фотография</div>
             </div>
         </div>
-        <!-- Новые творческие работы -->
-        <div class="gallery-item" data-category="creative" onclick="openModal(this)">
-            <img src="images/creative7.jpg" alt="Творческая фотография">
+        <div class="gallery-item" onclick="openModal(this)">
+            <img src="images/portrait10.jpg" alt="Фотография">
             <div class="gallery-overlay">
-                <div class="gallery-title">Творческие</div>
+                <div class="gallery-title">Фотография</div>
             </div>
         </div>
-        <div class="gallery-item" data-category="creative" onclick="openModal(this)">
-            <img src="images/creative8.jpg" alt="Творческая фотография">
+        <div class="gallery-item" onclick="openModal(this)">
+            <img src="images/portrait9.jpg" alt="Фотография">
             <div class="gallery-overlay">
-                <div class="gallery-title">Творческие</div>
+                <div class="gallery-title">Фотография</div>
             </div>
         </div>
-        <div class="gallery-item" data-category="creative" onclick="openModal(this)">
-            <img src="images/creative9.jpg" alt="Творческая фотография">
+        <div class="gallery-item" onclick="openModal(this)">
+            <img src="images/portrait8.jpg" alt="Фотография">
             <div class="gallery-overlay">
-                <div class="gallery-title">Творческие</div>
+                <div class="gallery-title">Фотография</div>
             </div>
         </div>
-
-        <!-- Истории -->
-        <div class="gallery-item" data-category="story" onclick="openModal(this)">
-            <img src="images/creative3.jpg" alt="История">
+        <div class="gallery-item" onclick="openModal(this)">
+            <img src="images/portrait7.jpg" alt="Фотография">
             <div class="gallery-overlay">
-                <div class="gallery-title">История</div>
+                <div class="gallery-title">Фотография</div>
             </div>
         </div>
-        <div class="gallery-item" data-category="story" onclick="openModal(this)">
-            <img src="images/creative6.jpg" alt="История">
+        <div class="gallery-item" onclick="openModal(this)">
+            <img src="images/portrait6.jpg" alt="Фотография">
             <div class="gallery-overlay">
-                <div class="gallery-title">История</div>
+                <div class="gallery-title">Фотография</div>
             </div>
         </div>
-        <div class="gallery-item" data-category="story" onclick="openModal(this)">
-            <img src="images/creative1.jpg" alt="История">
+        <div class="gallery-item" onclick="openModal(this)">
+            <img src="images/portrait5.jpg" alt="Фотография">
             <div class="gallery-overlay">
-                <div class="gallery-title">История</div>
+                <div class="gallery-title">Фотография</div>
             </div>
         </div>
-        <div class="gallery-item" data-category="story" onclick="openModal(this)">
-            <img src="images/creative4.jpg" alt="История">
+        <div class="gallery-item" onclick="openModal(this)">
+            <img src="images/portrait4.jpg" alt="Фотография">
             <div class="gallery-overlay">
-                <div class="gallery-title">История</div>
+                <div class="gallery-title">Фотография</div>
             </div>
         </div>
-        <div class="gallery-item" data-category="story" onclick="openModal(this)">
-            <img src="images/creative2.jpg" alt="История">
+        <div class="gallery-item" onclick="openModal(this)">
+            <img src="images/portrait3.jpg" alt="Фотография">
             <div class="gallery-overlay">
-                <div class="gallery-title">История</div>
+                <div class="gallery-title">Фотография</div>
             </div>
         </div>
-        <div class="gallery-item" data-category="story" onclick="openModal(this)">
-            <img src="images/creative5.jpg" alt="История">
+        <div class="gallery-item" onclick="openModal(this)">
+            <img src="images/portrait2.jpg" alt="Фотография">
             <div class="gallery-overlay">
-                <div class="gallery-title">История</div>
+                <div class="gallery-title">Фотография</div>
             </div>
         </div>
-        <!-- Новая история -->
-        <div class="gallery-item" data-category="story" onclick="openModal(this)">
-            <img src="images/creative7.jpg" alt="История">
+        <div class="gallery-item" onclick="openModal(this)">
+            <img src="images/portrait1.jpg" alt="Фотография">
             <div class="gallery-overlay">
-                <div class="gallery-title">История</div>
+                <div class="gallery-title">Фотография</div>
             </div>
         </div>
-        <!-- Новые истории -->
-        <div class="gallery-item" data-category="story" onclick="openModal(this)">
-            <img src="images/story10.jpg" alt="История">
+        
+        <!-- Категория creative -->
+        <div class="gallery-item" onclick="openModal(this)">
+            <img src="images/creative9.jpg" alt="Фотография">
             <div class="gallery-overlay">
-                <div class="gallery-title">История</div>
+                <div class="gallery-title">Фотография</div>
             </div>
         </div>
-        <div class="gallery-item" data-category="story" onclick="openModal(this)">
-            <img src="images/story11.jpg" alt="История">
+        <div class="gallery-item" onclick="openModal(this)">
+            <img src="images/creative8.jpg" alt="Фотография">
             <div class="gallery-overlay">
-                <div class="gallery-title">История</div>
+                <div class="gallery-title">Фотография</div>
+            </div>
+        </div>
+        <div class="gallery-item" onclick="openModal(this)">
+            <img src="images/creative7.jpg" alt="Фотография">
+            <div class="gallery-overlay">
+                <div class="gallery-title">Фотография</div>
+            </div>
+        </div>
+        <div class="gallery-item" onclick="openModal(this)">
+            <img src="images/creative6.jpg" alt="Фотография">
+            <div class="gallery-overlay">
+                <div class="gallery-title">Фотография</div>
+            </div>
+        </div>
+        <div class="gallery-item" onclick="openModal(this)">
+            <img src="images/creative5.jpg" alt="Фотография">
+            <div class="gallery-overlay">
+                <div class="gallery-title">Фотография</div>
+            </div>
+        </div>
+        <div class="gallery-item" onclick="openModal(this)">
+            <img src="images/creative4.jpg" alt="Фотография">
+            <div class="gallery-overlay">
+                <div class="gallery-title">Фотография</div>
+            </div>
+        </div>
+        <div class="gallery-item" onclick="openModal(this)">
+            <img src="images/creative3.jpg" alt="Фотография">
+            <div class="gallery-overlay">
+                <div class="gallery-title">Фотография</div>
+            </div>
+        </div>
+        <div class="gallery-item" onclick="openModal(this)">
+            <img src="images/creative2.jpg" alt="Фотография">
+            <div class="gallery-overlay">
+                <div class="gallery-title">Фотография</div>
+            </div>
+        </div>
+        <div class="gallery-item" onclick="openModal(this)">
+            <img src="images/creative1.jpg" alt="Фотография">
+            <div class="gallery-overlay">
+                <div class="gallery-title">Фотография</div>
+            </div>
+        </div>
+        
+        <!-- Категория story (в самом низу) -->
+        <div class="gallery-item" onclick="openModal(this)">
+            <img src="images/story11.jpg" alt="Фотография">
+            <div class="gallery-overlay">
+                <div class="gallery-title">Фотография</div>
+            </div>
+        </div>
+        <div class="gallery-item" onclick="openModal(this)">
+            <img src="images/story10.jpg" alt="Фотография">
+            <div class="gallery-overlay">
+                <div class="gallery-title">Фотография</div>
+            </div>
+        </div>
+        <div class="gallery-item" onclick="openModal(this)">
+            <img src="images/story9.jpg" alt="Фотография">
+            <div class="gallery-overlay">
+                <div class="gallery-title">Фотография</div>
+            </div>
+        </div>
+        <div class="gallery-item" onclick="openModal(this)">
+            <img src="images/story8.jpg" alt="Фотография">
+            <div class="gallery-overlay">
+                <div class="gallery-title">Фотография</div>
+            </div>
+        </div>
+        <div class="gallery-item" onclick="openModal(this)">
+            <img src="images/story7.jpg" alt="Фотография">
+            <div class="gallery-overlay">
+                <div class="gallery-title">Фотография</div>
+            </div>
+        </div>
+        <div class="gallery-item" onclick="openModal(this)">
+            <img src="images/story6.jpg" alt="Фотография">
+            <div class="gallery-overlay">
+                <div class="gallery-title">Фотография</div>
+            </div>
+        </div>
+        <div class="gallery-item" onclick="openModal(this)">
+            <img src="images/story5.jpg" alt="Фотография">
+            <div class="gallery-overlay">
+                <div class="gallery-title">Фотография</div>
+            </div>
+        </div>
+        <div class="gallery-item" onclick="openModal(this)">
+            <img src="images/story4.jpg" alt="Фотография">
+            <div class="gallery-overlay">
+                <div class="gallery-title">Фотография</div>
+            </div>
+        </div>
+        <div class="gallery-item" onclick="openModal(this)">
+            <img src="images/story3.jpg" alt="Фотография">
+            <div class="gallery-overlay">
+                <div class="gallery-title">Фотография</div>
+            </div>
+        </div>
+        <div class="gallery-item" onclick="openModal(this)">
+            <img src="images/story2.jpg" alt="Фотография">
+            <div class="gallery-overlay">
+                <div class="gallery-title">Фотография</div>
+            </div>
+        </div>
+        <div class="gallery-item" onclick="openModal(this)">
+            <img src="images/story1.jpg" alt="Фотография">
+            <div class="gallery-overlay">
+                <div class="gallery-title">Фотография</div>
             </div>
         </div>
     </div>
@@ -1187,7 +1235,7 @@
                 <p class="email"><a href="mailto:triggerwork@icloud.com">triggerwork@icloud.com</a></p>
             </div>
             <div class="social-links">
-                <a href="https://vk.com/ttimshot" target="_blank">VK</a>
+                <a href="https://vk.com/fixtim88" target="_blank">VK</a>
                 <a href="https://avito.ru/brands/i206353782" target="_blank">Avito</a>
             </div>
         </div>
@@ -1287,38 +1335,8 @@
             });
 
             // Наблюдаем за всеми элементами, которые должны анимироваться
-            const animatedElements = document.querySelectorAll('.gallery-item, .gallery-filters, .profile-section, .contact');
+            const animatedElements = document.querySelectorAll('.gallery-item, .profile-section, .contact');
             animatedElements.forEach(el => observer.observe(el));
-
-            const filterButtons = document.querySelectorAll('.filter-btn');
-            const galleryItems = document.querySelectorAll('.gallery-item');
-
-            filterButtons.forEach(button => {
-                button.addEventListener('click', () => {
-                    // Убираем активный класс со всех кнопок
-                    filterButtons.forEach(btn => btn.classList.remove('active'));
-                    // Добавляем активный класс нажатой кнопке
-                    button.classList.add('active');
-                    
-                    const category = button.dataset.category;
-                    
-                    galleryItems.forEach(item => {
-                        if (category === 'all' || item.dataset.category === category) {
-                            item.style.display = 'block';
-                            setTimeout(() => {
-                                item.style.opacity = '1';
-                                item.style.transform = 'scale(1)';
-                            }, 10);
-                        } else {
-                            item.style.opacity = '0';
-                            item.style.transform = 'scale(0.8)';
-                            setTimeout(() => {
-                                item.style.display = 'none';
-                            }, 300);
-                        }
-                    });
-                });
-            });
 
             // Проверяем загрузку изображений
             const images = document.querySelectorAll('.gallery-item img');
